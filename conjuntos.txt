@@ -1,0 +1,5 @@
+Juan,Carlos,Daniela,Camila,Cristian
+Pension,Transporte,Poliza,Seguro,EPS
+Empleado 'x' paga el servicio 'y'.
+Empleado 'x' paga pension y transporte.:0,1
+Empleados que pagan seguro.:3
