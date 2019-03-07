@@ -1,12 +1,7 @@
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
-from reportlab.lib.pagesizes import letter
-from reportlab.platypus import Image
-from reportlab.lib.pagesizes import landscape
-from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
-from reportlab.lib import colors
+from reportlab.platypus import Table
 from random import getrandbits
-import os
 
 w, h = A4
 a = []
@@ -22,7 +17,6 @@ def main():
     get_conjuntos('conjuntos.txt')
     grid_x_y(7)
     create_PDF()
-    # os.popen(pdf)
 
 def fill_matriz(matriz):
     for i in range(5):
@@ -190,7 +184,7 @@ def create_PDF():
         w/2, h-80, 'Universidad Pedagogica y Tecnologica de Colombia')
     c.setFont('Helvetica', 12)
     c.drawString(75, h-150, 'R5 = R2 Δ R3')
-    c.drawCentredString(w/2, h-180, 'R5= {(x,y)/x∈A ^ y∈B ^ (M2(x,y) v M3(x) ^ ~ (M2(x,y) ^ M3(x)))}')
+    c.drawCentredString(w/2, h-180, 'R5= {(x,y)/x∈A ^ y∈B ^ (M2(x,y) v M3(x)) ^ ~ (M2(x,y) ^ M3(x))}')
     table(h-200, c, create_m5(create_m2(int(param[0]), int(param[1]), matriz),create_m3(int(m3[1]), matriz)), 'R5')
     c.save()
 
